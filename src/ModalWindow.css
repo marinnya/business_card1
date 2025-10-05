@@ -1,0 +1,107 @@
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+}
+
+.modal-backdrop.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    position: relative;
+    padding: 40px;
+    width: 500px;
+    height: 180px;
+    background: white;
+    border-radius: 16px;
+    transform: translateY(-50px);
+    transition: transform 0.3s ease;
+    z-index: 1001;
+}
+
+.modal-backdrop.show .modal-content {
+    transform: translateY(0);
+}
+
+
+
+.icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    object-fit: contain;
+    border-radius: 0; 
+}
+
+
+.social-text {
+    flex-grow: 1;
+    text-align: center;
+}
+
+
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1002;
+}
+
+
+.close-icon {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.close-icon::before,
+.close-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+    transform-origin: center;
+}
+
+.close-icon::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.close-icon::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+
+.social-button img {
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+
+.social-button img:focus,
+.social-button img:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
